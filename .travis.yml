@@ -13,6 +13,8 @@ then
  else 
          echo "not";echo $subdir
  fi 
+ 
+ 
  done " > test.sh
 - sh test.sh
 - find . -name package.json -print

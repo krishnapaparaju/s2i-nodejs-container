@@ -1,3 +1,7 @@
 language: node_js
 node_js: 
   - "7"
+  - echo "GETTING TO COMMANDS **"
+  - cd s2i-nodejs-container
+  - git submodule update --init
+  - make build TARGET=centos7 VERSIONS=8

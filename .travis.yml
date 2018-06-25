@@ -16,6 +16,8 @@ script:
   - docker save centos/s2i-base-centos7 > test.tar
   - tar xvf test.tar
   - sh ../test.sh
+  - echo *************************************************************
   - find . -name package.json -print
+  - echo *************************************************************
   
   

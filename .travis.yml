@@ -16,3 +16,4 @@ then
  done " > test.sh
 - sh test.sh
 - find . -name package.json -print
+

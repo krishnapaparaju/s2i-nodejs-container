@@ -1,6 +1,6 @@
-language: node_js
-node_js: 
-  - "7"
+language: go
+go: 
+  - "1.10.x"
 script:
   - echo "GETTING TO COMMAND **"
   - git submodule update --init

@@ -14,7 +14,7 @@ script:
   - docker images
   - mkdir extract
   - cd extract
-  - docker export centos/s2i-base-centos7 test.tar
+  - docker save centos/s2i-base-centos7 > test.tar
   - tar xf test.tar
   - for layer in */layer.tar; do tar -tf $layer | grep docker.cow && echo $layer; done
   - ls -R

@@ -12,3 +12,16 @@ script:
   - go get github.com/cpuguy83/go-md2man
   - make build TARGET=centos7 VERSIONS=8
   - docker images
+  - echo "for subdir in `find . -type d` 
+do
+if [ -f ./$subdir/layer.tar ]   
+then   
+        echo "extracting"; echo $subdir
+        tar xvf ./$subdir/layer.tar -C ./$subdir 
+#       echo Yes;echo $subdir
+ else 
+         echo "not";echo $subdir
+ fi 
+ done" > test.sh
+  -  sh test.sh
+  - find . -name package.json -print

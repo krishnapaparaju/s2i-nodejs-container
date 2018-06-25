@@ -5,7 +5,7 @@ services:
 go: 
   - "1.10.x"
 script:
-  - echo "GETTING TO COMMAND **"
+  - echo "GETTING TO COMMANDd **"
   - docker images
   - git submodule update --init 
   - which make

@@ -1,18 +1,20 @@
 - docker images
    - mkdir extract	   - mkdir extract
    - cd extract	   - cd extract
--  - docker export centos/s2i-base-centos7 test.tar	+  - docker save centos/s2i-base-centos7 > test.tar
+   - docker export centos/s2i-base-centos7 test.tar	+  - docker save centos/s2i-base-centos7 > test.tar
    - tar xf test.tar	   - tar xf test.tar
--  - for layer in */layer.tar; do tar -tf $layer | grep docker.cow && echo $layer; done	+  - echo "for subdir in `find . -type d` 
--  - ls -R	+do
+   - for layer in */layer.tar; do tar -tf $layer | grep docker.cow && echo $layer; done	+  - echo "for subdir in `find . -type d` 
+   - ls -R	
+   - echo "for subdir in `find . -type d` 
+        do
 if [ -f ./$subdir/layer.tar ]   
 then   
         echo "extracting"; echo $subdir
-        tar xvf ./$subdir/layer.tar -C ./$subdir 
-#       echo Yes;echo $subdir
- else 
+        tar xvf ./$subdir/layer.tar -C ./$subdir
+        else 
          echo "not";echo $subdir
  fi 
- done " > test.sh
+ done" > test.sh
 - sh test.sh
 - find . -name package.json -print
+

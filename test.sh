@@ -9,3 +9,5 @@ then
          echo "not";echo $subdir
  fi 
  done
+ 
+ 

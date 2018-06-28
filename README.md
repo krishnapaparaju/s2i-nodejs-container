@@ -1,4 +1,4 @@
-NodeJS container images
+NodeJS container images (demo)
 ====================
 
 This repository contains the source for building various versions of
